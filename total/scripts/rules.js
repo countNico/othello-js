@@ -19,9 +19,6 @@ function change_hidden(hide) {
 function save_data() {
     field = document.getElementById("set_d1").checked;
     if (!field) {
-        items_info[3].content[3].type = null;
-        items_info[3].content[4].type = null;
-        items_info[4].content[3].type = null;
         items_info[4].content[4].type = 'w';
         items_info[5].content[5].type = 'w';
         items_info[4].content[5].type = 'b';
@@ -29,9 +26,17 @@ function save_data() {
         document.getElementById("game_table").className = "ten_size";
         field_data[0].value = 10;
         field_data[1].value = 9;
+        field_data[2].value = "9";
+        field_data[3].value = "90";
+        field_data[4].value = "99";
+        field_data[5].value = 8;
         setTimeout(function () { loaded_popup = true }, 5990);
     }
     else {
+        items_info[3].content[3].type = 'w';
+        items_info[4].content[4].type = 'w';
+        items_info[3].content[4].type = 'b';
+        items_info[4].content[3].type = 'b';
         setTimeout(function () { loaded_popup = true }, 5190);
     }
     player_color = document.getElementById("set_d3").checked;
@@ -347,40 +352,40 @@ function enderman() {
     if (black == white) {
         document.getElementsByClassName("game_result")[0].className = "game_result marked";
         document.getElementsByClassName("game_result")[1].className = "game_result marked";
-        document.getElementsByClassName("box_name")[0].innerHTML = "Draw";
-        document.getElementsByClassName("box_name")[1].innerHTML = "Draw";
+        document.getElementsByClassName("box_name")[0].innerHTML = languages_data[languages].cl_19;
+        document.getElementsByClassName("box_name")[1].innerHTML = languages_data[languages].cl_19;
     }
     else if (black > white) {
         document.getElementsByClassName("game_result")[0].className = "game_result marked";
         document.getElementsByClassName("game_result")[1].className = "game_result";
-        document.getElementsByClassName("box_name")[0].innerHTML = "Winner";
+        document.getElementsByClassName("box_name")[0].innerHTML = languages_data[languages].cl_13;
     }
     else if (black < white){
         document.getElementsByClassName("game_result")[0].className = "game_result";
         document.getElementsByClassName("game_result")[1].className = "game_result marked";
-        document.getElementsByClassName("box_name")[1].innerHTML = "Winner";
+        document.getElementsByClassName("box_name")[1].innerHTML = languages_data[languages].cl_13;
     }
     if (difficulty && player_color) {
-        document.getElementsByClassName("who_play")[0].innerHTML = "player:";
-        document.getElementsByClassName("who_play")[1].innerHTML = "computer:";
+        document.getElementsByClassName("who_play")[0].innerHTML = languages_data[languages].cl_14;
+        document.getElementsByClassName("who_play")[1].innerHTML = languages_data[languages].cl_20;
     }
     else if (difficulty && !player_color) {
-        document.getElementsByClassName("who_play")[0].innerHTML = "computer:";
-        document.getElementsByClassName("who_play")[1].innerHTML = "player:";
+        document.getElementsByClassName("who_play")[0].innerHTML = languages_data[languages].cl_20;
+        document.getElementsByClassName("who_play")[1].innerHTML = languages_data[languages].cl_14;
     }
     document.getElementsByClassName("result_score")[0].innerHTML = black;
     document.getElementsByClassName("result_score")[1].innerHTML = white;
     if (difficulty == "e") {
-        document.getElementsByClassName("game_mode")[0].innerHTML = "easy mode";
-        document.getElementsByClassName("game_mode")[1].innerHTML = "easy mode";
+        document.getElementsByClassName("game_mode")[0].innerHTML = languages_data[languages].cl_20;
+        document.getElementsByClassName("game_mode")[1].innerHTML = languages_data[languages].cl_20;
     }
     else if (difficulty == "m") {
-        document.getElementsByClassName("game_mode")[0].innerHTML = "medium mode";
-        document.getElementsByClassName("game_mode")[1].innerHTML = "medium mode";
+        document.getElementsByClassName("game_mode")[0].innerHTML = languages_data[languages].cl_21;
+        document.getElementsByClassName("game_mode")[1].innerHTML = languages_data[languages].cl_21;
     }
     else if (difficulty == "h") {
-        document.getElementsByClassName("game_mode")[0].innerHTML = "hard mode";
-        document.getElementsByClassName("game_mode")[1].innerHTML = "hard mode";
+        document.getElementsByClassName("game_mode")[0].innerHTML = languages_data[languages].cl_22;
+        document.getElementsByClassName("game_mode")[1].innerHTML = languages_data[languages].cl_22;
     }
     else {
         document.getElementsByClassName("game_mode")[0].innerHTML = "create by countNico";

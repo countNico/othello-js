@@ -72,28 +72,57 @@ function ai_filler() {
     }
     else if (difficulty == "h") {
         if (player_color) {
+            for (r = 0; r < 100; r++) {
+                if (!value_w[r]) {
+                    break;
+                }
+                else {
+                    if (value_w_id[r] == "0" || value_w_id[r] == field_data[2].value || value_w_id[r] == field_data[3].value || value_w_id[r] == field_data[4].value) {
+                        setTimeout("popup(value_w_id[" + r + "], true)", 1);
+                        return 0;
+
+                    }
+                }
+            }
+        }
+        else {
+            for (r = 0; r < 100; r++) {
+                if (!value_b[r]) {
+                    break;
+                }
+                else {
+                    if (value_b_id[r] == "0" || value_b_id[r] == field_data[2].value || value_b_id[r] == field_data[3].value || value_b_id[r] == field_data[4].value) {
+                        setTimeout("popup(value_b_id[" + r + "], true)", 1);
+                        return 0;
+                    }
+                }
+            }
+        }
+        ai_count(0);
+        aid = ai_counter;
+        /*
+        if (player_color) {
             ai_count(value_w[aid]);
             if (value_w[aid]) {
                 ai_count(value_w[aid]);
-                if (value_w[aid]) {
-                    ai_count(value_w[aid]);
-                }
+                if (value_w[aid]) {ai_count(value_w[aid]);}
             }
         }
         else {
             ai_count(value_b[aid]);
             if (value_b[aid]) {
                 ai_count(value_b[aid]);
-                if (value_b[aid]) {
-                    ai_count(value_b[aid]);
-                }
+                if (value_b[aid]) {ai_count(value_b[aid]);}
             }
         }
+        */
         for (j = 0; j < field_data[0].value; j++) {
             for (k = 0; k < field_data[0].value; k++) {
                 items_info[j].content[k].future = items_info[j].content[k].type;
             }
         }
+        value_top.splice(0, value_top.length);
+        value_avrage.splice(0, value_avrage.length);
         for (i = aid - 1; i > -1; i--) {
             setTimeout("ai_hard(" + i + ")", 1);
         }
@@ -151,8 +180,13 @@ function ai_hard(i) {
         items_info[ten].content[one].type = 'b';
         change_achate(ten, one, 'bf');
     }
-    hard_valence();
-    value_top.unshift(value_future[0]);
+    player_corner = hard_valence();
+    if (document.getElementById("black_score").innerHTML < 10) {
+        value_top.unshift((value_future[0] + player_corner - 2));
+    }
+    else {
+        value_top.unshift((value_future[0] + player_corner));
+    }
     sum = 0;
     count_all = 0;
     for (m = 0; m < 100; m++) {
@@ -162,7 +196,7 @@ function ai_hard(i) {
         }
         else { break}
     }
-    value_avrage.unshift(Number((sum / count_all).toFixed(3)));
+    value_avrage.unshift(Number(((sum + player_corner) / count_all).toFixed(3)));
     for (j = 0; j < field_data[0].value; j++) {
         for (k = 0; k < field_data[0].value; k++) {
             items_info[j].content[k].type = items_info[j].content[k].future;
@@ -172,6 +206,7 @@ function ai_hard(i) {
 
 // calculate the score of future turn
 function hard_valence() {
+    player_corner = 0;
     value_future.splice(0, value_future.length);
     value_future_id.splice(0, value_future_id.length);
     for (i = 0; i < field_data[0].value; i++) {
@@ -188,6 +223,9 @@ function hard_valence() {
                 }
                 value_future.unshift(counter);
                 value_future_id.unshift(item_id);
+                if (counter && (item_id == "0" || item_id == field_data[2].value || item_id == field_data[3].value || item_id == field_data[4].value)) {
+                    player_corner += field_data[5].value;
+                }
             }
             else {
                 value_future.unshift(0);
@@ -196,6 +234,7 @@ function hard_valence() {
         }
     }
     sorting_data(true);
+    return player_corner;
 }
 
 // sorting hard mood data
