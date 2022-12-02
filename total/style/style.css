@@ -1,12 +1,12 @@
 ﻿body {
-    margin: 0;
-    padding: 0;
+    margin: 0px;
+    padding: 0px;
 }
 
 #layout_fitter {
     width: 1010px;
     height: auto;
-    margin: 0 auto;
+    margin: 0px auto;
     overflow: hidden;
 }
 
@@ -20,7 +20,7 @@
     position: relative;
     border-radius: 15px;
     cursor: default;
-    transform-origin: 0 0;
+    transform-origin: 0px 0px;
 }
 
 #othello > #game_setting {
@@ -28,7 +28,7 @@
     height: 670px;
     background: #125012;
     border-radius: 25px;
-    box-shadow: 0 0 1px 50px black;
+    box-shadow: 0px 0px 1px 50px black;
     position: absolute;
     top: 20px;
     left: 20px;
@@ -41,14 +41,14 @@
     background: #176f20;
     border-radius: 20px;
     float: left;
-    margin: 15px 0 0 15px;
+    margin: 15px 0px 0px 15px;
     font-size: 27px;
     font-weight: 900;
     position: relative;
 }
 
 #othello > #game_setting > #rules > h3 {
-    margin: 20px 0 20px 20px;
+    margin: 20px 0px 20px 20px;
 }
 
 #othello > #game_setting > #rules > #languages_button {
@@ -81,7 +81,7 @@
     border-radius: 15px;
     cursor: pointer;
     background: #125012;
-    margin: 17px auto 0;
+    margin: 17px auto 0px;
     font-size: 27px;
 }
 
@@ -89,7 +89,7 @@
     width: 35%;
     height: 640px;
     float: right;
-    margin: 15px 15px 0 0;
+    margin: 15px 15px 0px 0px;
 }
 
 #othello #setting > .setter {
@@ -98,7 +98,7 @@
     overflow: hidden;
     font-size: 27px;
     font-weight: 900;
-    margin: 0 0 18px 0;
+    margin: 0px 0px 18px 0px;
     border-radius: 20px;
     background: #176f20;
     padding-left: 20px;
@@ -110,7 +110,7 @@
     width: 356px;
     height: 100%;
     background: rgba(30, 90, 20, 0.7);
-    right: 0;
+    right: 0px;
     position: absolute;
     display: none;
 }
@@ -137,7 +137,7 @@
 }
 
 #othello #setting > .setter:nth-child(2) > label {
-    border: 0 none;
+    border: 0px none;
 }
 
 #othello #setting > .setter:nth-child(2) > input:checked + label {
@@ -149,7 +149,7 @@
     height: 70px;
     float: left;
     border: 2px solid #125012;
-    margin: -15px 20px 0 0;
+    margin: -15px 20px 0px 0px;
     border-radius: 15px;
 }
 
@@ -167,7 +167,7 @@
     font-size: 27px;
     font-weight: 900;
     text-align: left;
-    margin: 50px 0 5px;
+    margin: 50px 0px 5px;
 }
 
 #othello > #game_table {
@@ -227,7 +227,7 @@
     width: 210px;
     height: 700px;
     float: left;
-    padding: 0 0 0 40px;
+    padding: 0px 0px 0px 40px;
     position: relative;
     z-index: 10;
 }
@@ -263,7 +263,7 @@
 #othello #game_end > .game_result > .box_name {
     font-size: 40px;
     text-align: center;
-    margin: -20px 0 40px;
+    margin: -20px 0px 40px;
     visibility: hidden;
 }
 
@@ -305,18 +305,18 @@
 #othello #game_end > .game_result > .result_score {
     float: left;
     font-size: 50px;
-    margin: 5px 0 0 0;
+    margin: 5px 0px 0px 0px;
 }
 
 #othello #game_end > .game_result > .game_mode {
     clear: left;
     font-size: 25px;
-    margin: 0 0 0 15px;
+    margin: 0px 0px 0px 15px;
     color: #125012;
 }
 
 #othello #game_end > .game_result.marked > .game_mode {
-    margin: 0 0 0 9px;
+    margin: 0px 0px 0px 9px;
 }
 
 #othello #game_end > .game_reload {
@@ -327,7 +327,7 @@
     border-radius: 15px;
     cursor: pointer;
     background: #176f20;
-    margin: 0 auto;
+    margin: 0px auto;
     font-size: 27px;
 }
 
@@ -340,7 +340,7 @@
     font-size: 27px;
     font-weight: 900;
     text-align: left;
-    margin: 50px 0 5px;
+    margin: 50px 0px 5px;
 }
 
 #othello #game_info > .info_box > .black_white_box {
@@ -348,7 +348,7 @@
     overflow: hidden;
     background: #176f20;
     border-radius: 15px;
-    padding: 6px 0 6px 6px;
+    padding: 6px 0px 6px 6px;
     float: left;
 }
 
@@ -363,7 +363,7 @@
 }
 
 #othello #game_info > .info_box > .black_white_score > p {
-    margin: 2px 0 3px 10px;
+    margin: 2px 0px 3px 10px;
     font-size: 65px;
     height: 65px;
 }
@@ -392,11 +392,11 @@
 
 #othello.othello_l_1 > #game_setting > #rules {
     float: right;
-    margin: 15px 15px 0 0;
+    margin: 15px 15px 0px 0px;
 }
 
 #othello.othello_l_1 > #game_setting > #rules > h3 {
-    margin: 20px 20px 20px 0;
+    margin: 20px 20px 20px 0px;
 }
 
 #othello.othello_l_1 > #game_setting > #rules > #languages_button {
@@ -415,26 +415,26 @@
 
 #othello.othello_l_1 > #game_setting > #setting {
     float: left;
-    margin: 15px 0 0 15px;
+    margin: 15px 0px 0px 15px;
 }
 
 #othello.othello_l_1 #setting > .setter {
-    padding: 0 20px 0 0;
+    padding: 0px 20px 0px 0px;
     float: left;
 }
 
 #othello.othello_l_1 #setting > .setter > .hide_field {
     right: unset;
-    left: 0;
+    left: 0px;
 }
 
 #othello.othello_l_1 #setting > .setter > label {
-    margin: 0 0 0 9px;
+    margin: 0px 0px 0px 9px;
 }
 
 #othello.othello_l_1 #setting > .setter > label > span {
     float: right;
-    margin: -15px 0 0 20px;
+    margin: -15px 0px 0px 20px;
 }
 
 #othello.othello_l_1 #game_info > .info_box > p {
@@ -457,7 +457,7 @@
 
 #othello.othello_l_1 > #game_info {
     float: right;
-    padding: 0 40px 0 0;
+    padding: 0px 40px 0px 0px;
 }
 
 #othello.othello_l_1 #game_info > #game_end {
@@ -496,11 +496,11 @@
 
 #othello.othello_l_1 #game_end > .game_result > .game_mode {
     clear: right;
-    margin: 0 15px 0 0;
+    margin: 0px 15px 0px 0px;
 }
 
 #othello.othello_l_1 #game_end > .game_result.marked > .game_mode {
-    margin: 0 9px 0 0;
+    margin: 0px 9px 0px 0px;
 }
 
 #othello.othello_l_1 #game_info > .info_box > p {
@@ -508,7 +508,7 @@
 }
 
 #othello.othello_l_1 #game_info > .info_box > .black_white_box {
-    padding: 6px 6px 6px 0;
+    padding: 6px 6px 6px 0px;
     float: right;
 }
 
@@ -517,7 +517,7 @@
 }
 
 #othello.othello_l_1 #game_info > .info_box > .black_white_score > p {
-    margin: 2px 10px 3px 0;
+    margin: 2px 10px 3px 0px;
 }
 
 @media only screen and (min-width: 1800px) {
@@ -527,7 +527,7 @@
     }
     #othello {
         transform: scale(1.5);
-        margin: 50px 0 50px 5px;
+        margin: 50px 0px 50px 5px;
     }
 }
 
@@ -538,7 +538,7 @@
     }
     #othello {
         transform: scale(0.75);
-        margin: 50px 0 50px 5px;
+        margin: 50px 0px 50px 5px;
     }
 }
 
@@ -549,7 +549,7 @@
     }
     #othello {
         transform: scale(0.55);
-        margin: 30px 0 30px 5px;
+        margin: 30px 0px 30px 5px;
     }
 }
 
@@ -559,6 +559,6 @@
         height: 400px;
     }
     #othello {
-        margin: 0;
+        margin: 0px;
     }
 }
