@@ -376,16 +376,16 @@ function enderman() {
     document.getElementsByClassName("result_score")[0].innerHTML = black;
     document.getElementsByClassName("result_score")[1].innerHTML = white;
     if (difficulty == "e") {
-        document.getElementsByClassName("game_mode")[0].innerHTML = languages_data[languages].cl_20;
-        document.getElementsByClassName("game_mode")[1].innerHTML = languages_data[languages].cl_20;
-    }
-    else if (difficulty == "m") {
         document.getElementsByClassName("game_mode")[0].innerHTML = languages_data[languages].cl_21;
         document.getElementsByClassName("game_mode")[1].innerHTML = languages_data[languages].cl_21;
     }
-    else if (difficulty == "h") {
+    else if (difficulty == "m") {
         document.getElementsByClassName("game_mode")[0].innerHTML = languages_data[languages].cl_22;
         document.getElementsByClassName("game_mode")[1].innerHTML = languages_data[languages].cl_22;
+    }
+    else if (difficulty == "h") {
+        document.getElementsByClassName("game_mode")[0].innerHTML = languages_data[languages].cl_23;
+        document.getElementsByClassName("game_mode")[1].innerHTML = languages_data[languages].cl_23;
     }
     else {
         document.getElementsByClassName("game_mode")[0].innerHTML = "create by countNico";
