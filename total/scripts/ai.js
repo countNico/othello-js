@@ -181,12 +181,7 @@ function ai_hard(i) {
         change_achate(ten, one, 'bf');
     }
     player_corner = hard_valence();
-    if (document.getElementById("black_score").innerHTML < 10) {
-        value_top.unshift((value_future[0] + player_corner - 2));
-    }
-    else {
-        value_top.unshift((value_future[0] + player_corner));
-    }
+	value_top.unshift((value_future[0] + get_corner(player_corner)));
     sum = 0;
     count_all = 0;
     for (m = 0; m < 100; m++) {
@@ -201,6 +196,39 @@ function ai_hard(i) {
         for (k = 0; k < field_data[0].value; k++) {
             items_info[j].content[k].type = items_info[j].content[k].future;
         }
+    }
+}
+
+// fix ai attention to corners
+function get_corner(player_corner) {
+	if (player_color && (items_info[0].content[0].type != 'b' && items_info[0].content[field_data[1].value].type != 'b' && items_info[field_data[1].value].content[0].type != 'b' && items_info[field_data[1].value].content[field_data[1].value].type != 'b')) {
+		console.log("bbb");
+		player_corner -= 4;
+		if (player_corner < 0) {
+			player_corner = 0;
+		}
+		console.log(player_corner);
+		return player_corner;
+	}
+	else if (!player_color && (items_info[0].content[0].type != 'w' && items_info[0].content[field_data[1].value].type != 'w' && items_info[field_data[1].value].content[0].type != 'w' && items_info[field_data[1].value].content[field_data[1].value].type != 'w')) {
+		console.log("www");
+		player_corner -= 4;
+		if (player_corner < 0) {
+			player_corner = 0;
+		}
+		console.log(player_corner);
+		return player_corner;
+	}
+    else if ((player_color && document.getElementById("black_score").innerHTML < 10) || (!player_color && document.getElementById("white_score").innerHTML < 10)) {
+        player_corner -= 2;
+		if (player_corner < 0) {
+			player_corner = 0;
+		}
+		console.log(player_corner);
+		return player_corner;
+    }
+    else {
+        return player_corner;
     }
 }
 

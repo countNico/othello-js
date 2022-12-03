@@ -15,14 +15,15 @@
         cl_13: "Winner",
         cl_14: "player:",
         cl_15: "score:",
-        cl_16: "play again",
-        cl_17: "TURN:",
-        cl_18: "SCORE:",
-        cl_19: "Draw",
-        cl_20: "computer:",
-        cl_21: "easy mode",
-        cl_22: "medium mode",
-        cl_23: "hard mode"
+        cl_16: "Play Again",
+        cl_17: "New Game",
+        cl_18: "TURN:",
+        cl_19: "SCORE:",
+        cl_20: "Draw",
+        cl_21: "computer:",
+        cl_22: "easy mode",
+        cl_23: "medium mode",
+        cl_24: "hard mode"
     },
     {
         cl_1: "قوانین اتلو:",
@@ -41,13 +42,14 @@
         cl_14: "بازیکن:",
         cl_15: "امتیاز:",
         cl_16: "بازی مجدد",
-        cl_17: "نوبت:",
-        cl_18: "امتیاز:",
-        cl_19: "مساوی",
-        cl_20: "کامپیوتر:",
-        cl_21: "مود آسان",
-        cl_22: "مود متوسط",
-        cl_23: "مود سخت"
+        cl_17: "بازی جدید",
+        cl_18: "نوبت:",
+        cl_19: "امتیاز:",
+        cl_20: "مساوی",
+        cl_21: "کامپیوتر:",
+        cl_22: "مود آسان",
+        cl_23: "مود متوسط",
+        cl_24: "مود سخت"
     }
 ];
 
@@ -82,7 +84,8 @@ function change_languages() {
     document.getElementsByClassName("cl_15")[0].innerHTML = languages_data[languages].cl_15;
     document.getElementsByClassName("cl_15")[1].innerHTML = languages_data[languages].cl_15;
     document.getElementsByClassName("game_reload")[0].innerHTML = languages_data[languages].cl_16;
-    document.getElementsByClassName("cl_17")[0].innerHTML = languages_data[languages].cl_17;
+    document.getElementsByClassName("game_reload")[1].innerHTML = languages_data[languages].cl_17;
     document.getElementsByClassName("cl_18")[0].innerHTML = languages_data[languages].cl_18;
+    document.getElementsByClassName("cl_19")[0].innerHTML = languages_data[languages].cl_19;
 }
 

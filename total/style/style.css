@@ -368,6 +368,18 @@
     height: 65px;
 }
 
+#othello #game_info > .game_reload {
+    width: 150px;
+    font-weight: 900;
+    text-align: center;
+    padding: 9px 15px 12px;
+    border-radius: 15px;
+    cursor: pointer;
+    background: #176f20;
+    margin: 220px auto 0;
+    font-size: 27px;
+}
+
 @keyframes anim {
     0% {
         opacity: 0;
@@ -379,6 +391,8 @@
         transform: scale(1);
     }
 }
+
+
 
 /* when language change to persian(Fa) */
 
@@ -519,6 +533,12 @@
 #othello.othello_l_1 #game_info > .info_box > .black_white_score > p {
     margin: 2px 10px 3px 0;
 }
+
+#othello.othello_l_1 #game_info > .game_reload {
+    margin: 198px auto 0;
+}
+
+
 
 @media only screen and (min-width: 1800px) {
     #layout_fitter {
