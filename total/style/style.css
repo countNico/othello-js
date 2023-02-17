@@ -1,0 +1,642 @@
+﻿body {
+    margin: 0;
+    padding: 0;
+}
+
+#layout_fitter {
+    width: 1160px;
+    height: auto;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+#othello {
+    width: 1000px;
+    margin: 50px auto;
+    background: black;
+    overflow: hidden;
+    color: white;
+    font-family: times;
+    position: relative;
+    border-radius: 15px;
+    cursor: default;
+    transform-origin: 0 0;
+}
+
+#othello > #game_setting {
+    width: 960px;
+    height: 670px;
+    background: #125012;
+    border-radius: 25px;
+    box-shadow: 0 0 1px 50px black;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    z-index: 20;
+}
+
+#othello > #game_setting > #rules {
+    width: 58%;
+    height: 638px;
+    background: #176f20;
+    border-radius: 20px;
+    float: left;
+    margin: 15px 0 0 15px;
+    font-size: 27px;
+    font-weight: 900;
+    position: relative;
+}
+
+#othello > #game_setting > #rules > h3 {
+    margin: 20px 0 20px 20px;
+}
+
+#othello > #game_setting > #rules > #languages_button {
+    width: 40px;
+    height: 40px;
+    background: #125012;
+    border-radius: 6px;
+    font-size: 20px;
+    text-align: center;
+    line-height: 40px;
+    font-weight: 900;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+}
+
+#othello > #game_setting > #rules > p {
+    font-size: 20px;
+    height: 465px;
+    margin: 20px;
+    line-height: 23px;
+    text-align: justify;
+}
+
+#othello > #game_setting > #rules > #save_setting {
+    width: 60px;
+    text-align: center;
+    padding: 9px 15px 12px;
+    border-radius: 15px;
+    cursor: pointer;
+    background: #125012;
+    margin: 17px auto 0;
+    font-size: 27px;
+}
+
+#othello > #game_setting > #setting {
+    width: 35%;
+    height: 640px;
+    float: right;
+    margin: 15px 15px 0 0;
+}
+
+#othello #setting > .setter {
+    width: 100%;
+    height: 146px;
+    overflow: hidden;
+    font-size: 27px;
+    font-weight: 900;
+    margin: 0 0 18px 0;
+    border-radius: 20px;
+    background: #176f20;
+    padding-left: 20px;
+    float: right;
+    position: relative;
+}
+
+#othello #setting > .setter > .hide_field {
+    width: 356px;
+    height: 100%;
+    background: rgba(30, 90, 20, 0.7);
+    right: 0;
+    position: absolute;
+    display: none;
+}
+
+#othello #setting > .setter > p {
+    margin: 15px auto 30px;
+}
+
+#othello #setting > .setter > input {
+    display: none;
+}
+
+#othello #setting > .setter > label {
+    padding: 10px 15px;
+    border-radius: 15px;
+    cursor: pointer;
+    border: 2px solid #125012;
+    margin-right: 9px;
+    font-size: 25px;
+}
+
+#othello #setting > .setter > input:checked + label {
+    background: #125012;
+}
+
+#othello #setting > .setter:nth-child(2) > label {
+    border: 0 none;
+}
+
+#othello #setting > .setter:nth-child(2) > input:checked + label {
+    background-color: transparent;
+}
+
+#othello #setting > .setter > label > span {
+    width: 70px;
+    height: 70px;
+    float: left;
+    border: 2px solid #125012;
+    margin: -15px 20px 0 0;
+    border-radius: 15px;
+}
+
+#othello #setting > .setter > label > span > span.item {
+    transition: 0s;
+    animation: none;
+    cursor: pointer;
+}
+
+#othello #setting > .setter > input:checked + label > span {
+    background: #125012;
+}
+
+#othello #game_info > .info_box > p {
+    font-size: 27px;
+    font-weight: 900;
+    text-align: left;
+    margin: 50px 0 5px;
+}
+
+#othello > #game_table {
+    width: 700px;
+    height: 700px;
+    background: #176f20;
+    border-radius: 15px;
+    padding: 10px 1px 1px 10px;
+    float: right;
+}
+
+#othello > #game_table.eight_size {
+    width: 699px;
+    height: 699px;
+    padding: 11px 1px 1px 11px;
+}
+
+#othello .item {
+    width: 65px;
+    height: 65px;
+    margin: 2px;
+    border-radius: 50%;
+    float: left;
+    background: #156015;
+    transition: 0.3s;
+    animation: anim 0.3s;
+    cursor: pointer;
+}
+
+#othello > #game_table.eight_size > .item {
+    width: 78px;
+    height: 78px;
+    margin: 4px;
+}
+
+#othello > #game_table.ten_size > .item {
+    width: 65px;
+    height: 65px;
+    margin: 2px;
+}
+
+#othello .item:hover {
+    background: #125500;
+}
+
+#othello .item.black {
+    background: black;
+    cursor: default;
+}
+
+#othello .item.white {
+    background: white;
+    cursor: default;
+}
+
+#othello > #game_info {
+    width: 210px;
+    height: 700px;
+    float: left;
+    padding: 0 0 0 40px;
+    position: relative;
+    z-index: 10;
+}
+
+#othello #game_info > #game_end {
+    width: 100%;
+    height: 685px;
+    position: absolute;
+    top: 19px;
+    left: 19px;
+    background: black;
+    display: none;
+}
+
+#othello #game_end > .game_result {
+    width: 100%;
+    height: 289px;
+    background: #176f20;
+    border-radius: 15px;
+    margin-bottom: 19px;
+    border: 1px solid transparent;
+    font-weight: 900;
+    font-size: 30px;
+}
+
+#othello #game_end > .game_result.marked {
+    width: 233px;
+    height: 252px;
+    border: 10px solid #125012;
+    border-top: 30px solid #125012;
+}
+
+#othello #game_end > .game_result > .box_name {
+    font-size: 40px;
+    text-align: center;
+    margin: -20px 0 40px;
+    visibility: hidden;
+}
+
+#othello #game_end > .game_result.marked > .box_name {
+    margin: -20px auto 33px;
+    color: #125012;
+    width: 155px;
+    padding-top: 3px;
+    background-color: #176f20;
+    border-radius: 50%;
+    visibility: visible;
+}
+
+#othello #game_end > .game_result > .who_play {
+    text-align: left;
+    margin: 15px 15px 20px 20px;
+    float: left;
+}
+
+#othello #game_end > .game_result.marked > .who_play {
+    margin: 15px 10px 20px 15px;
+}
+
+#othello #game_end > .game_result > div {
+    clear: right;
+}
+
+#othello #game_end > .game_result > p:nth-child(4) {
+    text-align: left;
+    margin: 15px 15px 65px 20px;
+    clear: left;
+    float: left;
+}
+
+#othello #game_end > .game_result.marked > p:nth-child(4) {
+    margin: 15px 12px 35px 15px;
+}
+
+#othello #game_end > .game_result > .result_score {
+    float: left;
+    font-size: 50px;
+    margin: 5px 0 0 0;
+}
+
+#othello #game_end > .game_result > .game_mode {
+    clear: left;
+    font-size: 25px;
+    margin: 0 0 0 15px;
+    color: #125012;
+}
+
+#othello #game_end > .game_result.marked > .game_mode {
+    margin: 0 0 0 9px;
+}
+
+#othello #game_end > .game_reload {
+    width: 130px;
+    font-weight: 900;
+    text-align: center;
+    padding: 9px 15px 12px;
+    border-radius: 15px;
+    cursor: pointer;
+    background: #176f20;
+    margin: 0 auto;
+    font-size: 27px;
+}
+
+#othello #game_info > .info_box {
+    width: 100%;
+    overflow: hidden;
+}
+
+#othello #game_info > .info_box > p {
+    font-size: 27px;
+    font-weight: 900;
+    text-align: left;
+    margin: 50px 0 5px;
+}
+
+#othello #game_info > .info_box > .black_white_box {
+    width: 75px;
+    overflow: hidden;
+    background: #176f20;
+    border-radius: 15px;
+    padding: 6px 0 6px 6px;
+    float: left;
+}
+
+#othello #game_info > .info_box > .black_white_box > .item {
+    transition: 0s;
+    animation: none;
+}
+
+#othello #game_info > .info_box > .black_white_score {
+    overflow: hidden;
+    float: left;
+}
+
+#othello #game_info > .info_box > .black_white_score > p {
+    margin: 2px 0 3px 10px;
+    font-size: 65px;
+    height: 65px;
+}
+
+#othello #game_info > .game_reload {
+    width: 150px;
+    font-weight: 900;
+    text-align: center;
+    padding: 9px 15px 12px;
+    border-radius: 15px;
+    cursor: pointer;
+    background: #176f20;
+    margin: 220px auto 0;
+    font-size: 27px;
+}
+
+@keyframes anim {
+    0% {
+        opacity: 0;
+        transform: scale(0.1);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+
+
+/* when language change to persian(Fa) */
+
+#othello.othello_l_1 {
+    direction: rtl;
+}
+
+#othello.othello_l_1 > #game_setting {
+    right: 20px;
+}
+
+#othello.othello_l_1 > #game_setting > #rules {
+    float: right;
+    margin: 15px 15px 0 0;
+}
+
+#othello.othello_l_1 > #game_setting > #rules > h3 {
+    margin: 20px 20px 20px 0;
+}
+
+#othello.othello_l_1 > #game_setting > #rules > #languages_button {
+    left: 20px;
+    right: unset;
+}
+
+#othello.othello_l_1 > #game_setting > #rules > p {
+    font-size: 21px;
+    line-height: 25px;
+}
+
+#othello.othello_l_1 > #game_setting > #rules > #save_setting {
+    padding: 9px 17px 12px;
+}
+
+#othello.othello_l_1 > #game_setting > #setting {
+    float: left;
+    margin: 15px 0 0 15px;
+}
+
+#othello.othello_l_1 #setting > .setter {
+    padding: 0 20px 0 0;
+    float: left;
+}
+
+#othello.othello_l_1 #setting > .setter > .hide_field {
+    right: unset;
+    left: 0;
+}
+
+#othello.othello_l_1 #setting > .setter > label {
+    margin: 0 0 0 9px;
+}
+
+#othello.othello_l_1 #setting > .setter > label > span {
+    float: right;
+    margin: -15px 0 0 20px;
+}
+
+#othello.othello_l_1 #game_info > .info_box > p {
+    font-size: 35px;
+    text-align: right;
+}
+
+#othello.othello_l_1 > #game_table {
+    padding: 10px 10px 1px 1px;
+    float: left;
+}
+
+#othello.othello_l_1 > #game_table.eight_size {
+    padding: 11px 11px 1px 1px;
+}
+
+#othello.othello_l_1 .item {
+    float: right;
+}
+
+#othello.othello_l_1 > #game_info {
+    float: right;
+    padding: 0 40px 0 0;
+}
+
+#othello.othello_l_1 #game_info > #game_end {
+    left: unset;
+    right: 19px;
+}
+
+#othello.othello_l_1 #game_end > .game_result > .who_play {
+    text-align: right;
+    margin: 15px 20px 20px 15px;
+    float: right;
+}
+
+#othello.othello_l_1 #game_end > .game_result.marked > .who_play {
+    margin: 15px 15px 20px 10px;
+}
+
+#othello.othello_l_1 #game_end > .game_result > div {
+    clear: left;
+}
+
+#othello.othello_l_1 #game_end > .game_result > p:nth-child(4) {
+    text-align: right;
+    margin: 15px 20px 65px 15px;
+    clear: right;
+    float: right;
+}
+
+#othello.othello_l_1 #game_end > .game_result.marked > p:nth-child(4) {
+    margin: 15px 15px 35px 12px;
+}
+
+#othello.othello_l_1 #game_end > .game_result > .result_score {
+    float: right;
+}
+
+#othello.othello_l_1 #game_end > .game_result > .game_mode {
+    clear: right;
+    margin: 0 15px 0 0;
+}
+
+#othello.othello_l_1 #game_end > .game_result.marked > .game_mode {
+    margin: 0 9px 0 0;
+}
+
+#othello.othello_l_1 #game_info > .info_box > p {
+    text-align: right;
+}
+
+#othello.othello_l_1 #game_info > .info_box > .black_white_box {
+    padding: 6px 6px 6px 0;
+    float: right;
+}
+
+#othello.othello_l_1 #game_info > .info_box > .black_white_score {
+    float: right;
+}
+
+#othello.othello_l_1 #game_info > .info_box > .black_white_score > p {
+    margin: 2px 10px 3px 0;
+}
+
+#othello.othello_l_1 #game_info > .game_reload {
+    margin: 198px auto 0;
+}
+
+
+
+@media only screen and (min-width: 1800px) {
+    #layout_fitter {
+        width: 1510px;
+        height: 1200px;
+    }
+    #othello {
+        transform: scale(1.5);
+        margin: 50px 0 50px 5px;
+    }
+}
+
+@media only screen and (max-width: 1200px) {
+    #layout_fitter {
+        width: 1000px;
+        height: 740px;
+    }
+    #othello {
+        transform: scale(0.72);
+        margin: 50px 0 50px 140px;
+    }
+}
+
+@media only screen and (max-width: 1010px) {
+    #layout_fitter {
+        width: 760px;
+        height: 640px;
+    }
+    #othello {
+        transform: scale(0.52);
+        margin: 50px 0 50px 110px;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    #layout_fitter {
+        width: 560px;
+        height: 460px;
+    }
+    #othello {
+        transform: scale(0.4);
+        margin: 30px 0 30px 80px;
+    }
+}
+
+@media only screen and (max-width: 576px) {
+    #layout_fitter {
+        width: 552px;
+        height: 400px;
+    }
+    #othello {
+        transform: scale(0.4);
+        margin: 30px 0 30px 80px;
+    }
+}
+
+
+
+@media screen and (max-width: 1200px) and (orientation: portrait) {
+    #layout_fitter {
+        width: 1010px;
+        height: auto;
+    }
+    #othello {
+        transform: scale(1);
+    margin: 50px auto;
+    }
+}
+
+@media screen and (max-width: 1010px) and (orientation: portrait) {
+    #layout_fitter {
+        width: 760px;
+        height: 640px;
+    }
+    #othello {
+        transform: scale(0.75);
+        margin: 50px 0 50px 5px;
+    }
+}
+
+@media screen and (max-width: 767px) and (orientation: portrait) {
+    #layout_fitter {
+        width: 560px;
+        height: 460px;
+    }
+    #othello {
+        transform: scale(0.55);
+        margin: 30px 0 30px 5px;
+    }
+}
+
+@media screen and (max-width: 576px) and (orientation: portrait) {
+    #layout_fitter {
+        width: 552px;
+        height: 400px;
+    }
+    #othello {
+        margin: 0;
+    }
+}
+

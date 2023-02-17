@@ -1,0 +1,115 @@
+﻿<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+        <title>Othello</title>
+        <link href="total/style/style.css" rel="stylesheet" />
+        <link href="total/style/fonts.css" rel="stylesheet" />
+    </head>
+    <body>
+        <div id="layout_fitter">
+            <div id="othello">
+                <div id="game_setting">
+                    <div id="rules">
+                        <h3 class="cl_1">Othello Rules:</h3>
+                        <div id="languages_button" onclick="change_languages()">Fa</div>
+                        <p class="cl_2">Each player is allocated one of the colours by mutual agreement and they take turns to play a piece until all the squares are occupied. A player's objective is to have more of their allocated colour face upwards at the end of the game. Each piece played must be laid adjacent to an opponent's piece so that the opponent's piece or a row of opponent's pieces is flanked by the new piece and another piece of the player's colour. All of the opponent's pieces between these two pieces are 'captured' and turned over to match the player's colour,black always plays first. It can happen that a piece is played so that pieces or rows of pieces in more than one direction are trapped between the new piece played and other pieces of the same colour. In this case, all the pieces in all viable directions are turned over. The game is over when neither player has a legal move (i.e. a move that captures at least one opposing piece) or when the board is full. In Othello, a player without a move simply passes, and the other player keeps playing pieces until the first player can make a move again.</p>
+                        <div id="save_setting" onclick="save_data()">start</div>
+                    </div>
+                    <div id="setting">
+                        <div class="setter">
+                            <p class="cl_4">playing field:</p>
+                            <input type="radio" id="set_d1" name="set_r1" checked />
+                            <label for="set_d1">8×8</label>
+                            <input type="radio" id="set_d2" name="set_r1" />
+                            <label for="set_d2">10×10</label>
+                        </div>
+                        <div class="setter">
+                            <div class="hide_field"></div>
+                            <p class="cl_5">color of player:</p>
+                            <input type="radio" id="set_d3" name="set_r2" checked />
+                            <label for="set_d3">
+                                <span>
+                                    <span class="item black"></span>
+                                </span>
+                            </label>
+                            <input type="radio" id="set_d4" name="set_r2" />
+                            <label for="set_d4">
+                                <span>
+                                    <span class="item white"></span>
+                                </span>
+                            </label>
+                        </div>
+                        <div class="setter">
+                            <p class="cl_6">play with:</p>
+                            <input type="radio" id="set_d5" name="set_r3" checked />
+                            <label for="set_d5" class="cl_7" onclick="change_hidden(true)">computer</label>
+                            <input type="radio" id="set_d6" name="set_r3" />
+                            <label for="set_d6" class="cl_8" onclick="change_hidden(false)">friend</label>
+                        </div>
+                        <div class="setter">
+                            <div class="hide_field"></div>
+                            <p class="cl_9">difficulty:</p>
+                            <input type="radio" id="set_d7" name="set_r4" />
+                            <label for="set_d7" class="cl_10">easy</label>
+                            <input type="radio" id="set_d8" name="set_r4" checked />
+                            <label for="set_d8" class="cl_11">medium</label>
+                            <input type="radio" id="set_d9" name="set_r4" />
+                            <label for="set_d9" class="cl_12">hard</label>
+                        </div>
+                    </div>
+                </div>
+                <div id="game_table" class="eight_size">
+                    <!--<div class="item"></div>
+                <div class="item black"></div>
+                <div class="item white"></div>-->
+                </div>
+                <div id="game_info">
+                    <div id="game_end">
+                        <div class="game_result marked">
+                            <p class="box_name">Winner</p>
+                            <p class="who_play">player:</p>
+                            <div class="item black"></div>
+                            <p class="cl_15">score:</p>
+                            <p class="result_score">0</p>
+                            <p class="game_mode">create by countNico</p>
+                        </div>
+                        <div class="game_result">
+                            <p class="box_name">Winner</p>
+                            <p class="who_play">player:</p>
+                            <div class="item white"></div>
+                            <p class="cl_15">score:</p>
+                            <p class="result_score">0</p>
+                            <p class="game_mode">create by count_nico</p>
+                        </div>
+                        <div class="game_reload" onclick="location.reload()">Play Again</div>
+                    </div>
+                    <div class="info_box">
+                        <p class="cl_18">TURN:</p>
+                        <div class="black_white_box">
+                            <div id="turner" class="item black"></div>
+                        </div>
+                    </div>
+                    <div class="info_box">
+                        <p class="cl_19">SCORE:</p>
+                        <div class="black_white_box">
+                            <div class="item black"></div>
+                            <div class="item white"></div>
+                        </div>
+                        <div class="black_white_score">
+                            <p id="black_score">0</p>
+                            <p id="white_score">0</p>
+                        </div>
+                    </div>
+					<div class="game_reload" onclick="location.reload()">New Game</div>
+                </div>
+            </div>
+        </div>
+        <script src="total/scripts/rules.js"></script>
+        <script src="total/scripts/languages.js"></script>
+        <script src="total/scripts/data.js"></script>
+        <script src="total/scripts/ai.js"></script>
+    </body>
+</html>
